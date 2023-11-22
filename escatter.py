@@ -36,24 +36,12 @@ import matplotlib.transforms as transforms
 # Constant
 # =============================================================================
 
-
-
-
-
-
-
-
-
-
 c = 299792458 # Speed of light in m s-1
 h = 6.626e-34 # Plancks constant in m2 kg s-1
 me = 9.10938e-31 # mass of electron in kg
 kb = 1.380649e-23 # Stefan boltzmanns constant in m2 kg s-2 K-1
 epsilion = 1e-1 #  Probabliliy of photon escape
-
-sigma_t = 6.652e-29 # m2
-
-
+sigma_t = 6.652e-29 # thompson cross sectional area m2
 
 # =============================================================================
 # Scatterung paramters
@@ -61,7 +49,6 @@ sigma_t = 6.652e-29 # m2
 
 # rest wavelngth in units of Angstrom 
 lam_0 = 6563
-
 
 # denisty parameter either 0 or 2 [0 untested]
 s = [2]
@@ -89,10 +76,8 @@ vsh = [5500]
 
 
 # =============================================================================
-# 
+# Unit conversion
 # =============================================================================
-
-
 
 lam_0 = lam_0  * 1e-10 # rest wavelength in meters!!
 
@@ -224,8 +209,7 @@ def x_prime(x,alpha,nu,gamma,mu_prime,v_div_c):
     x' paramter from section 9.5, see equation 2.8
     """
     ratio = 1 +  ((h*nu*(1-alpha) )) / ( (gamma*me*(c**2))*(1 - (mu_prime * v_div_c)))
-    # ratio = 1/ratio
-     
+
     return x * 1/ratio 
 
 
@@ -335,20 +319,17 @@ def MFP(nu,Ne,Te):
     
     
     if h*nu < me*c**2 and kb*Te < me*c**2: 
-        # print('1')
         l_inv = Ne*sigma_t*(1 - 2 * (h*nu / (me*c**2)) - 5*(h*nu / (me*c**2)) * (kb*Te / (me*c**2)))
         
     elif h*nu*kb*Te < (me*c**2)**2 and kb*Te > me*c**2:
     
         l_inv = Ne*sigma_t*(1 - 8 *(h*nu/(me*c**2))*(kb*Te/(me*c**2)))
-        # print('2')
-        
+
     elif h*nu > me*c**2 and kb*Te > me*c**2:
         
         l_inv = 3/16 * (Ne*sigma_t) * ((me*c**2)/(h*nu)) * ((me*c**2)/(kb*Te)) * ( 0.077 + np.log(4 * (h*nu / (me*c**2)) * (kb*Te / (me*c**2))))
-        # print('3')
+
     elif h*nu > me*c**2 and kb*Te < me*c**2:
-        # print('4')
         
         l_inv = 3/8 * (Ne*sigma_t) * ((me*c**2)/(h*nu))* (np.log( (2 * h*nu / (me*c**2)) ) + 0.5 +   (kb*Te / (me*c**2))) * (1-(3/2)*(kb*Te / (me*c**2)))
         
@@ -371,21 +352,13 @@ def scatterPhoton(args):
     # For each photon interacting, grab a random electron
     
     Te_in  = args[0][0]
-    # Te_inf  = args[0][1]
     tau = args[1]
-    # tau_CSM = args[2]
+
     R   = args[3] 
-    # vwind  = args[4]
+
     vshock = args[5]
     s      = args[6]
-    
-    # returnPath = args[6]
-    # randomselection = args[7]
-    # photonHist = args[8]
-    
-    # n = 2
 
-    
     R1 = 1
     R2 = R
 
@@ -398,25 +371,12 @@ def scatterPhoton(args):
     r =   choice(segs ,1,p=segs_prob/np.sum(segs_prob))[0]
 
     r0 = sample_spherical(r = r)
-    # r0 = np.array([0,0,0])
+
     
     rMag = abs(np.sqrt(sum([i**2 for i in r0])))
     
     Te_r = Te_func(rMag,Te_in)
-    # if not randomselection:
-        
-    #     Te_r = Te_in
-    # else:
-    #     Te_r = Te_inf
-    
-    # v = lambda x: ( (vwind*1000) + (vshock*1000)*((R1/x)**n))
 
-    # lam_random = velocity2lambda(-1*vshock*1000*(2*np.random.random()-1),lam_0)
-    # else:
-    #     photonDist = (hist[1][:-1]+lam_0/1e-10)*1e-10
-    #     photonProb = hist[0]/max(hist[0])
-    #     lam_random = choice(photonDist  ,1,p=photonProb)[0]
-        
     V = -1* 1000 * vshock * r0
     
     lam_random = velocity2lambda(V[0],lam_0)
@@ -458,6 +418,7 @@ def scatterPhoton(args):
             
                 
             Te_r = Te_func(rMag,Te_in)
+            
             # Find the photons distance to boundary
             # l0 = BoundaryDistance(r0,omega0,R2)
             
@@ -504,7 +465,7 @@ def scatterPhoton(args):
                 x1 = x_prime(x,alpha,nu0,gamma,mu1,v_div_c)
                 
                 Y = ((x1/x)**2) * X(x,x1)
-                # print(Y)
+
                 
                 if  2 * np.random.random() < Y : 
                     break
@@ -540,8 +501,6 @@ def scatterPhoton(args):
         if w1<epsilion: 
             
             # ignore photons travelling in the negative x direction 
-            # if ( r0[0] < 0) or scatters < 1:
-                
             if ( r0[0] < 0) or scatters < 1:
                 photonNu = [np.nan]
                 photonWeights = [np.nan]
@@ -549,8 +508,7 @@ def scatterPhoton(args):
                 pathTaken = [np.nan]
                 
             break
-    
-         # 
+
         photonWeights.append(w0*Li)
         photonNu.append(nu0)
         
@@ -574,7 +532,7 @@ def scatterPhoton(args):
     
 
 # =============================================================================
-# 
+#  Run with multiprocessing handler
 # =============================================================================
 
 def mp_handler(Te=10000,
@@ -638,7 +596,7 @@ def mp_handler(Te=10000,
 
     
 # =============================================================================
-#Parameters
+# Get parameters ready
 # =============================================================================
 
 
@@ -652,22 +610,6 @@ args = modelParams[0]
 
 print('Total number of model is %d' % len(modelParams))
 
-
-
-# =============================================================================
-# 
-# =============================================================================
-
-curLoc = os.path.dirname(os.path.abspath(__file__))
-
-saveLocFig = os.path.join(curLoc,'figures')
-saveLocTxt = os.path.join(curLoc,'output')
-
-if not os.path.exists(saveLocFig):
-    os.mkdir(saveLocFig )
-
-if not os.path.exists(saveLocTxt):
-    os.mkdir(saveLocTxt)
 
 # =============================================================================
 # 
@@ -701,7 +643,6 @@ if __name__ == '__main__':
 
 
         tau = round(i[0],1)
-        # tau_CSM = round(i[1],1)
         Te = i[1]
         R = i[2]
         vshock = i[3]
@@ -712,7 +653,7 @@ if __name__ == '__main__':
         counter+=1
         
         fname = fr'LAM0_{int(lam_0/1e-10)}_tau_{tau}_T_e_{Te}_R_{R}_vs_{vshock}_vw_{vwind}_s_{s}.txt'
-        fpath = os.path.join(saveLocTxt, fname)
+        fpath = os.path.join(output_folder, fname)
         
         if os.path.exists(fpath) and not redo:
             print('Skipping %s as file already exists' % fname )
@@ -779,9 +720,9 @@ if __name__ == '__main__':
 
         
       
-        np.savetxt(fpath, np.vstack([photonLams_bins,flx/np.nanmax(flx)]).T,
-                    delimiter=', ')
-        
+# =============================================================================
+# 
+# =============================================================================
         
 
         fpath = os.path.join(output_folder, fname)
@@ -791,30 +732,15 @@ if __name__ == '__main__':
     
         print('\nSaved emission profile as: %s'% fpath)
 
-        ax1.legend(frameon = False,fontsize = 7)
-# =============================================================================
-# Plot the profile
-# =============================================================================
-
-        # ax1.set_xlim(lam_0/1e-10 - 500 , lam_0/1e-10 + 500)
-        
-        
-        ax1.axvline(0 ,lw = 0.5,ls = ':',color = 'grey')
-        
-        # ax1.set_yscale('log')
-        # ax1.set_ylim(1,ax1.get_ylim()[1])
-        # ax1.set_xlim(-100,100)
-        
+    
 # =============================================================================
     # plot velocity axis
 # =============================================================================
 
-        
-        # xaxis = ax1.get_xticks()
+
         
         mn, mx = ax1.get_xlim()
-        # vel = lambda2velocity(xaxis,lam0 = lam_0/1e-10)
-        
+
            
         ax2.set_xlim(xmin = lambda2velocity(mn+lam_0/1e-10,lam0 = lam_0/1e-10),
                      xmax = lambda2velocity(mx+lam_0/1e-10,lam0 = lam_0/1e-10))
@@ -822,15 +748,18 @@ if __name__ == '__main__':
 
         
         ax2.axvline( -1 *vshock,lw = 0.5,ls = '--',color = 'red')
-        
-        # ax2.axvline( 0.5* -tau *Ve(Te)/1000,lw = 0.5,ls = '--',color = 'blue')
-        # ax2.axvline( 0.5*  tau *Ve(Te)/1000,lw = 0.5,ls = '--',color = 'blue')
+  
         
         trans = transforms.blended_transform_factory(ax2.transData, ax2.transAxes)
         
         ax2.text(-1 * vshock,0.01,'$V_{sh} = %.f~km/s$' % vshock,
                  rotation = 90,transform=trans,ha = 'right',
                  va = 'bottom',color = 'red',fontsize = 8)
+        
+        
+        ax1.axvline(0 ,lw = 0.5,ls = ':',color = 'grey')
+        ax1.legend(frameon = False,fontsize = 7)
+        
                  
       
 # =============================================================================
@@ -856,12 +785,6 @@ if __name__ == '__main__':
 # =============================================================================
 #         Save the output profile
 # =============================================================================
-
-        
-        
-        # photonVels = np.sort(photonVels)
-        # photonLams = np.sort(photonLams)
-        # input_dist = np.zeros(len(photonVels))
 
         
         ax1.set_xlabel('$\lambda~[A]$')
