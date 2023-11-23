@@ -1,6 +1,12 @@
-# Electron Scattering in Python
 
 [arxiv_link]: https://arxiv.org/list/astro-ph/new
+
+
+**Warning**  
+
+Paper currently going through internal review and will be uplaoded to Arxiv shortly
+
+# Electron Scattering in Python
 
 *escatter.py* is a Monte Carlo Electron Scattering Simulation designed to perform Monte Carlo simulations of electron scattering events.
 
@@ -16,7 +22,7 @@ As the photon travels outwards through this material, it will scatter of a elect
 
  The photon will continue to scatter outwards until it reaches an optically thin region, far away from where it was formed. We assume that photons emitted (or more accurately the photons which escape) on a single hemisphere would are observed (i.e. photons which escpae and are travelling away from the observer are not seen). A histogram of the emergent photons is then take to be the emergent spectral profile.
 
-This code is adapted from [Pozdnyakovet al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes being developed for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709)
+This code is adapted from [Pozdnyakovet al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes being developed for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
 
 ## Usage
