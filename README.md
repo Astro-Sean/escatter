@@ -2,7 +2,7 @@
 [arxiv_link]: https://arxiv.org/list/astro-ph/new
 
 
-> **Warning**  
+> :warning:
 > Paper currently going through internal review and will be uplaoded to Arxiv shortly
 
 
