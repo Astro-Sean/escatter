@@ -8,7 +8,7 @@
 
 *escatter.py* is a Monte Carlo Electron Scattering Simulation designed to perform Monte Carlo simulations of electron scattering events.
 
-This code was developed in order to better understand the emission lines from the interacting supernova SN 2021adxl [SN 2021adxl][arxiv_link], specifically the blue excess seen in the  H&alpha; 6563A emission line.
+This code was developed in order to better understand the emission lines from the interacting supernova [SN 2021adxl][arxiv_link], specifically the blue excess seen in the  H&alpha; 6563A emission line.
 
 
 
