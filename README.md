@@ -1,9 +1,5 @@
 
-[arxiv_link]: https://arxiv.org/list/astro-ph/new
-
-
-> :warning:
-> Paper currently going through internal review and will be uplaoded to Arxiv shortly
+[arxiv_link]: https://arxiv.org/abs/2312.13280
 
 
 
