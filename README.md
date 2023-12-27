@@ -1,4 +1,5 @@
 
+
 [arxiv_link]: https://arxiv.org/abs/2312.13280
 
 
@@ -16,16 +17,16 @@ This code was developed in order to better understand the emission lines from th
 
 This code was build for one specific science case (see [Section 4 in our paper][arxiv_link]). In short this code will  follow a photon, which was formed in a thin interface between the supernova ejecta and surrounding material, as it travels radially outwards through the dense material (described by an given opacity, &tau;).
 
-As the photon travels outwards through this material, it will scatter of a electron with a ceratin energy (related to its Maxwellian velocity). The photon will the  undergo a probablitic interation and may (or may not) scatter of the electron.
+As the photon travels outwards through this material, it will scatter of a electron with a certain energy (related to its Maxwellian velocity). The photon will the  undergo probabilistic iterations and may (or may not) scatter of the electron.
 
- The photon will continue to scatter outwards until it reaches an optically thin region, far away from where it was formed. We assume that photons emitted (or more accurately the photons which escape) on a single hemisphere would are observed (i.e. photons which escpae and are travelling away from the observer are not seen). A histogram of the emergent photons is then take to be the emergent spectral profile.
+ The photon will continue to scatter outwards until it reaches an optically thin region, far away from where it was formed. We assume that photons emitted (or more accurately the photons which escape) on a single hemisphere would are observed (i.e. photons which escape and are travelling away from the observer are not seen). A histogram of the emergent photons is then take to be the emergent spectral profile.
 
 This code is adapted from [Pozdnyakovet al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes being developed for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
 
 ## Usage
 
-This version of escatter.py is executed by changing values in the script and running the file. Below is the snippet of the paramters, many of these can be made to list to build a grid of models.
+This version of escatter.py is executed by changing values in the script and running the file. Below is the snippet of the parameters, many of these can be made to list to build a grid of models.
 
 
 ```python
@@ -65,11 +66,11 @@ Figures and output txt files will be written to `output/` and `figures/`
 
 ## Limitations
 
-There are many limitations and cavat to using this code:
+There are many limitations and caveats to using this code:
 
 - The code takes no account of physical distances i.e. knowing where the shock from and how far the CSM extends is non-trivial.
-- The code is completely sphereically syemmetric - such assymetric featurs such as torus or jets, in reality may yield different results.
-- Several functions are hardcoded, such as how and where the photons are injected, and how the CSM denisty and temperature evolves. This is a limitation of the code.
+- The code is completely spherically symmetric - such asymmetric features such as torus or jets, in reality may yield different results.
+- Several functions are hardcoded, such as how and where the photons are injected, and how the CSM density and temperature evolves. This is a limitation of the code.
 
 **If the community requires a more robust tool - reach out to [me](mailto:sean.brennan@astro.su.se)**
 ## Requirements
@@ -80,4 +81,4 @@ tqdm==4.66.1
 ```
 
 ## Warning
-I make no claim as to the validity of the output of this code, use at you own descretion.
+I make no claim as to the validity of the output of this code, use at you own discretion.
