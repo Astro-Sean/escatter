@@ -3,6 +3,9 @@
 [arxiv_link]: https://arxiv.org/abs/2312.13280
 
 
+[arxiv_link_SN2023fyq]: https://arxiv.org/abs/2401.15148
+
+
 
 
 # Electron Scattering in Python
@@ -10,6 +13,8 @@
 *escatter.py* is a Monte Carlo Electron Scattering Simulation designed to perform Monte Carlo simulations of electron scattering events.
 
 This code was developed in order to better understand the emission lines from the interacting supernova [SN 2021adxl][arxiv_link], specifically the blue excess seen in the  H&alpha; 6563A emission line.
+
+** A version of this code was used to model the pre-supernova He I 5876A emission prfile of [SN 2023fyq ][arxiv_link_SN2023fyq] - this will be uploaded shortly**
 
 
 
