@@ -14,7 +14,7 @@
 
 This code was developed in order to better understand the emission lines from the interacting supernova [SN 2021adxl][arxiv_link], specifically the blue excess seen in the  H&alpha; 6563A emission line.
 
-**A version of this code was used to model the pre-supernova He I 5876A emission prfile of [SN 2023fyq ][arxiv_link_SN2023fyq] - this will be uploaded shortly.**
+**A version of this code was used to model the pre-supernova He I 5876A emission profile of [SN 2023fyq ][arxiv_link_SN2023fyq] - this will be uploaded shortly.**
 
 
 
