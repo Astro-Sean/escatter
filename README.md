@@ -10,9 +10,11 @@
 
 # eScatter.py - Electron Scattering in Python
 
-*escatter.py* is a Monte Carlo Electron Scattering Simulation designed to perform Monte Carlo simulations of electron scattering events.
+*eScatter.py* is a Monte Carlo Electron Scattering Simulation designed to perform Monte Carlo simulations of electron scattering events.
 
 This code was developed in order to better understand the emission lines from the interacting supernova, [SN 2021adxl][arxiv_link] and [SN 2023fyq ][arxiv_link_SN2023fyq], specifically the blue excess seen in the  H&alpha; 6563A  and He I 5876 emission line.
+
+Scattering equations are adapted from [Pozdnyakovet al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes used for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
 **The code is under active development through colloborations with Harvard University - Please direct any questions to  [me](mailto:sean.brennan@astro.su.se)**
 
@@ -29,14 +31,18 @@ In short this code will  follow a photon, which was formed in a thin interface b
 <p align="center">
   <img src="./eScatter_6563_models.png" alt="Sample Image">
   <br>
-  <em>Figure 1: An example of eScatter's output for the H&alpha; emission line. Here an input profile similar to a thin emitting shell travelling at 3000 km/s is used. Photons are allowed to travel through a medium with a varying optical depth. Generally, with higher optical depth, the emergent profile is broader and the peak moves towards the blue. See the above link to see how we fit this to an observed  H&alpha; profile.</em>
+  <em>Figure 1: An example of *eScatterU.py*'s output for the H&alpha; emission line. Here an input profile similar to a thin emitting shell travelling at 3000 km/s is used. Photons are allowed to travel through a medium with a varying optical depth. Generally, with higher optical depth, the emergent profile is broader and the peak moves towards the blue. See the above link to see how we fit this to an observed  H&alpha; profile.</em>
+
 
 </p>
 
 
 The photon will continue to scatter outwards until it reaches an optically thin region, far away from where it was formed. We assume that photons emitted (or more accurately the photons which escape) on a single hemisphere would are observed (i.e. photons which escape and are travelling away from the observer are not seen). A histogram of the emergent photons is then take to be the emergent spectral profile.
 
-This code is adapted from [Pozdnyakovet al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes being developed for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
+[!IMPORTANT]
+Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times. i.e. has a transient evolved for long enough for such photons to diffusion to optical thin regions. Typically Type IIn SNe will show such features post peak (after a few weeks post explosion), constaining the optical depth.
+
+
 
 
 
