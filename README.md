@@ -43,7 +43,7 @@ The photon will continue to scatter outwards until it reaches an optically thin 
 
 
 > [!IMPORTANT]
-> Understand the output for the code before applying models to data
+> Understand the output of the code before applying models to data
 
 Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times. i.e. has a transient evolved for long enough for such photons to diffusion to optical thin regions. Typically Type IIn SNe will show such features post peak (after a few weeks post explosion), constaining the optical depth.
 
