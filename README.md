@@ -16,7 +16,8 @@ This code was developed in order to better understand the emission lines from th
 
 Scattering equations are adapted from [Pozdnyakovet al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes used for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
-**The code is under active development through colloborations with Harvard University - Please direct any questions to  [me](mailto:sean.brennan@astro.su.se)**
+> [!NOTE]
+> The code is under active development through colloborations with Harvard University - Please direct any questions to  [me](mailto:sean.brennan@astro.su.se)**
 
 
 
@@ -42,7 +43,7 @@ In short this code will  follow a photon, which was formed in a thin interface b
 The photon will continue to scatter outwards until it reaches an optically thin region, far away from where it was formed. We assume that photons emitted (or more accurately the photons which escape) on a single hemisphere would are observed (i.e. photons which escape and are travelling away from the observer are not seen). A histogram of the emergent photons is then take to be the emergent spectral profile.
 
 
-> [!IMPORTANT]
+> [!CAUTION]
 > Understand the output of the code before applying models to data
 
 Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times. i.e. has a transient evolved for long enough for such photons to diffusion to optical thin regions. Typically Type IIn SNe will show such features post peak (after a few weeks post explosion), constaining the optical depth.
