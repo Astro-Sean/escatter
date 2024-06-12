@@ -55,7 +55,7 @@ The diffusion time for a photon traveling through a medium with a certain optica
  where:
 - \( t_d \) is the diffusion time,
 - \( R \) is the characteristic length scale of the medium,
-- \( \tau \) is the optical depth of the medium,
+- \($$ \tau $$ \) is the optical depth of the medium,
 - \( c \) is the speed of light in a vacuum.
 
 
