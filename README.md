@@ -17,7 +17,7 @@ This code was developed in order to better understand the emission lines from th
 Scattering equations are adapted from [Pozdnyakovet al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes used for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
 > [!NOTE]
-> The code is under active development through colloborations with Harvard University - Please direct any questions to  [me](mailto:sean.brennan@astro.su.se)**
+> The code is under active development through colloborations with Harvard University - Please direct any questions to  [me](mailto:sean.brennan@astro.su.se)
 
 
 
@@ -25,16 +25,14 @@ Scattering equations are adapted from [Pozdnyakovet al. 1983](https://ui.adsabs.
 
 This code was build for to model the interacting of fat moving ejecta produced in a Supernova explosion colliding with slow moving material (see [Section 4 in our paper][arxiv_link]).
 
-In short this code will  follow a photon, which was formed in a thin interface between the supernova ejecta and surrounding material, as it travels radially outwards through the dense material (described by an given optical depth, &tau;).As the photon travels outwards through this material, it will scatter of a  electron with a certain energy (related to its Maxwellian velocity). The photon will the  undergo probabilistic iterations and may (or may not) scatter of the electron.
+In short this code will  follow a photon, which was formed in a thin interface between the supernova ejecta and surrounding material, as it travels radially outwards through the dense material (described by an given optical depth, &tau;). As the photon travels outwards through this material, it will scatter of a electron with a certain energy (related to its Maxwellian velocity). The photon will the  undergo probabilistic iterations and may (or may not) scatter of the electron.
 
 
 
 <p align="center">
-  <img src="./eScatter_6563_models.png" alt="Sample Image">
+  <img src="./eScatter_6563_models.png" alt="Image">
   <br>
   <em>Figure 1: An example of *eScatter.py*'s output for the H&alpha; emission line. Here an input profile similar to a thin emitting shell travelling at 3000 km/s is used. Photons are allowed to travel through a medium with a varying optical depth. Generally, with higher optical depth, the emergent profile is broader and the peak moves towards the blue. See the above link to see how we fit this to an observed  H&alpha; profile.</em>
-
-
 </p>
 
 
