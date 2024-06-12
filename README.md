@@ -47,7 +47,7 @@ The photon will continue to scatter outwards until it reaches an optically thin 
 
 > The diffusion time for a photon traveling through a medium with a certain optical depth, and assuming a random walk, is given by the following equation:
 
->\[ t_d = \frac{L^2 \tau}{c} \]
+> $$ t_d = \frac{L^2 \tau}{c} $$
 
 >where:
 >- \( t_d \) is the diffusion time,
@@ -56,7 +56,9 @@ The photon will continue to scatter outwards until it reaches an optically thin 
 >- \( c \) is the speed of light in a vacuum.
 
 
-
+```math
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
 
 
 
