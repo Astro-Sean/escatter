@@ -29,7 +29,7 @@ In short this code will  follow a photon, which was formed in a thin interface b
 <p align="center">
   <img src="./eScatter_6563_models.png" alt="Sample Image">
   <br>
-  <em>Figure 1: An example of eScatter's output for the H&alpha; emission line. Here an input profile similar to a thin emitting shell travelling at 6000 km/s is used. Photons are allowed to travel through a medium with a varying optical depth. Generally, with higher optical depth, the emergent profile is broader and the peak moves towards the blue. See the above link to see how we fit this to an observed  H&alpha; profile.</em>
+  <em>Figure 1: An example of eScatter's output for the H&alpha; emission line. Here an input profile similar to a thin emitting shell travelling at 3000 km/s is used. Photons are allowed to travel through a medium with a varying optical depth. Generally, with higher optical depth, the emergent profile is broader and the peak moves towards the blue. See the above link to see how we fit this to an observed  H&alpha; profile.</em>
 
 </p>
 
