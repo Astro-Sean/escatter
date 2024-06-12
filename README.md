@@ -20,12 +20,18 @@ This code was built to model the interaction of fast-moving ejecta produced in a
 In short, this code will follow a photon, which was formed in a thin interface between the supernova ejecta and surrounding material, as it travels radially outwards through the dense material (described by a given optical depth, &tau;). As the photon travels outwards through this material, it will scatter off an electron with a certain energy (related to its Maxwellian velocity). The photon will then undergo probabilistic iterations and may (or may not) scatter off the electron.
 
 <p align="center">
-  <img src="./eScatter_6563_models.png" alt="Image">
+  <img src="./eScatter_6563_models.png" alt="Image" width = 800>
   <br>
   <em>Figure 1: An example of *eScatter.py*'s output for the H&alpha; emission line. Here an input profile similar to a thin emitting shell traveling at 3000 km/s is used. Photons are allowed to travel through a medium with a varying optical depth. Generally, with higher optical depth, the emergent profile is broader, and the peak moves towards the blue. See the above link to see how we fit this to an observed H&alpha; profile.</em>
 </p>
 
 The photon will continue to scatter outwards until it reaches an optically thin region, far away from where it was formed. We assume that photons emitted (or more accurately the photons which escape) on a single hemisphere are observed (i.e., photons which escape and are traveling away from the observer are not seen). A histogram of the emergent photons is then taken to be the emergent spectral profile.
+
+<p align="center">
+  <img src="./eScatter_6563_models_log.png" alt="Image" width = 800>
+  <br>
+  <em>Figure 2: Same as Figure 1 but in logspace. Note the similarity to the work done by <a href="https://arxiv.org/abs/1312.6617">Huang & Chevalier 2017</a>.</em>
+</p>
 
 > [!CAUTION]
 > Understand the output of the code before applying models to data.
@@ -96,6 +102,21 @@ There are many limitations and caveats to using this code:
 matplotlib==3.8.0
 numpy==1.26.2
 tqdm==4.66.1
+```
+
+## Citation
+
+```
+@software{2024ascl.soft01020B,
+       author = {{Brennan}, S.~J. and {Schulze}, S. and {Lunnan}, R. and {Sollerman}, J. and {Yan}, L. and {Fransson}, C. and {Irani}, I. and {Melinder}, J. and {Chen}, T.~W. and {De}, K. and {Fremling}, C. and {Kim}, Y.~L. and {Perley}, D. and {Pessi}, P.~J. and {Drake}, A.~J. and {Graham}, M.~J. and {Laher}, R.~R. and {Masci}, F.~J. and {Purdum}, J. and {Rodriguez}, H.},
+        title = "{escatter: Electron scattering in Python}",
+ howpublished = {Astrophysics Source Code Library, record ascl:2401.020},
+         year = 2024,
+        month = jan,
+          eid = {ascl:2401.020},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2024ascl.soft01020B},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
 ```
 
 ## Warning
