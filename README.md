@@ -47,9 +47,7 @@ The photon will continue to scatter outwards until it reaches an optically thin 
 
 > The diffusion time for a photon traveling through a medium with a certain optical depth, and assuming a random walk, is given by the following equation:
 
->```math
-t_d = \frac{L^2 \tau}{c}
->```
+> $$ t_d = \frac{L^2 \tau}{c} $$
 
 >where:
 >- \( t_d \) is the diffusion time,
