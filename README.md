@@ -37,10 +37,15 @@ In short this code will  follow a photon, which was formed in a thin interface b
 </p>
 
 
+
+
 The photon will continue to scatter outwards until it reaches an optically thin region, far away from where it was formed. We assume that photons emitted (or more accurately the photons which escape) on a single hemisphere would are observed (i.e. photons which escape and are travelling away from the observer are not seen). A histogram of the emergent photons is then take to be the emergent spectral profile.
 
-[!IMPORTANT]
-Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times. i.e. has a transient evolved for long enough for such photons to diffusion to optical thin regions. Typically Type IIn SNe will show such features post peak (after a few weeks post explosion), constaining the optical depth.
+
+> [!IMPORTANT]
+> Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times. i.e. has a transient evolved for long enough for such photons to diffusion to optical thin regions. Typically Type IIn SNe will show such features post peak (after a few weeks post explosion), constaining the optical depth.
+
+
 
 
 
