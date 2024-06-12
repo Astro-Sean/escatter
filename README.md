@@ -43,14 +43,17 @@ The photon will continue to scatter outwards until it reaches an optically thin 
 
 
 > [!IMPORTANT]
-> Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times. i.e. has a transient evolved for long enough for such photons to diffusion to optical thin regions. Typically Type IIn SNe will show such features post peak (after a few weeks post explosion), constaining the optical depth.
-> The diffusion time for a photon traveling through a medium with a certain optical depth, and assuming a random walk, is given by the following equation:
-> $$ t_d = \frac{L^2 \tau}{c} $$
-> where:
->- \( t_d \) is the diffusion time,
->- \( L \) is the characteristic length scale of the medium,
->- \( \tau \) is the optical depth of the medium,
->- \( c \) is the speed of light in a vacuum.
+
+Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times. i.e. has a transient evolved for long enough for such photons to diffusion to optical thin regions. Typically Type IIn SNe will show such features post peak (after a few weeks post explosion), constaining the optical depth.
+
+The diffusion time for a photon traveling through a medium with a certain optical depth, and assuming a random walk, is given by the following equation:
+
+ $$ t_d = \frac{R^2 \tau}{c} $$
+ where:
+- \( t_d \) is the diffusion time,
+- \( R \) is the characteristic length scale of the medium,
+- \( \tau \) is the optical depth of the medium,
+- \( c \) is the speed of light in a vacuum.
 
 
 
