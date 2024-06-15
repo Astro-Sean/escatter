@@ -11,7 +11,7 @@ This code was developed to better understand the emission lines from the interac
 
 
 > [!NOTE]
-> The code is under active development through collaborations with Harvard University with an accompanying paper in preparation - Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
+> The code is under active development with an accompanying paper in preparation - Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
 
 ## Toy Model
 
