@@ -34,7 +34,7 @@ The photon will continue to scatter outwards until it reaches an optically thin 
 </p>
 
 > [!CAUTION]
-> Understand the output of the code before applying models to data.
+> Understand the output of the code before applying models to data. This code is not meant to be used as a black box, and the output of this code should be complemented with other information, such as the evolution of the transient and the appearance of scattering features in emission profiles.
 
 Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times, i.e., has a transient evolved for long enough for such photons to diffuse to optically thin regions. Typically, Type IIn SNe will show such features post-peak (after a few weeks post-explosion), constraining the optical depth.
 
@@ -105,6 +105,8 @@ tqdm==4.66.1
 ```
 
 ## Citation
+
+Dedicated paper in progress. For the time being please cite:
 
 ```
 @software{2024ascl.soft01020B,
