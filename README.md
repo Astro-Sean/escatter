@@ -17,7 +17,7 @@ This code was developed to better understand the emission lines from the interac
 
 This code was built to model the interaction of fast-moving ejecta produced in a supernova explosion colliding with slow-moving material (see [Section 4 in our paper][arxiv_link]).
 
-In short, this code will follow a photon, which was formed in a thin interface between the supernova ejecta and surrounding material, as it travels radially outwards through the dense material (described by a given optical depth, &tau;). As the photon travels outwards through this material, it will scatter off an electron with a certain energy (related to its Maxwellian velocity). The photon will then undergo probabilistic iterations and may (or may not) scatter off the electron.
+In short, this code will follow a photon, which was formed in a thin interface between the supernova ejecta and surrounding material, as it travels radially outwards through the dense material (described by a given optical depth, &tau;). As the photon travels outwards through this material, it will scatter off an electron with a certain energy (related to its Maxwellian velocity, which is related to its temperature). The photon will then undergo probabilistic iterations and may (or may not) scatter off the electron.
 
 <p align="center">
   <img src="./eScatter_6563_models.png" alt="Image" width = 800>
