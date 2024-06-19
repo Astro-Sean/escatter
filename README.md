@@ -43,7 +43,7 @@ The diffusion time for a photon traveling through a medium with a certain optica
 $$ t_d = \frac{R^2 \tau}{c} $$
 
 where:
-- \( t_d \) is the diffusion time,
+- \( t_d \) is the diffusion time (i.e. how long from the moment a photon is created, to when it escapes into a optically thin region),
 - \( R \) is the characteristic length scale of the medium,
 - \( &tau; \) is the optical depth of the medium,
 - \( c \) is the speed of light in a vacuum.
@@ -58,7 +58,7 @@ This version of escatter.py is executed by changing values in the script and run
 # Rest wavelength in units of Angstrom
 lam_0 = 6563
 
-# Density parameter either 0 or 2 [0 untested]
+# Density parameter typoically a number between 0 [Shell like CSM] and 2 [wind like CSM]
 s = [2]
 
 # Number of photons to send out
