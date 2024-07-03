@@ -40,7 +40,7 @@ Although scattering can produce very broad profiles when you assume high optical
 
 The diffusion time for a photon traveling through a medium with a certain optical depth, and assuming a random walk, is given by the following equation:
 
-$$ t_d = \frac{R^2 \tau}{c} $$
+$$ t_d = \frac{R \tau}{c} $$
 
 where:
 - \( t_d \) is the diffusion time (i.e. how long from the moment a photon is created, to when it escapes into a optically thin region),
