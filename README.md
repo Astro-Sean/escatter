@@ -4,14 +4,14 @@
 
 # eScatter.py - Electron Scattering in Python
 
-*eScatter.py* is a Monte Carlo Electron Scattering code designed to perform Monte Carlo simulations of electron scattering events. The baisi of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes developed for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
+*eScatter.py* is a Monte Carlo Electron Scattering code designed to perform Monte Carlo simulations of electron scattering events. The basis of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes developed for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
-This code was developed to better understand the emission lines from the interacting supernova, [SN 2021adxl][arxiv_link] and [SN 2023fyq][arxiv_link_SN2023fyq], specifically the blue excess seen in the H&alpha; 6563A and He I 5876 emission lines respectively.
+This code was developed to better understand the emission lines from the interacting supernova, [SN 2021adxl][arxiv_link] and [SN 2023fyq][arxiv_link_SN2023fyq], specifically the blue excess seen in the H&alpha; 6563&Aring; and He I 5876&lambda; emission lines respectively.
 
 
 
 > [!NOTE]
-> The code is under active development with an accompanying paper in preparation - Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
+> The code is under active development with an accompanying paper in preparation - future improvements will include bound-bound, bound-free, and free-free transitions, as well as viewing angles effects - Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
 
 ## Toy Model
 
