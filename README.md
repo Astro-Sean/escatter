@@ -11,7 +11,7 @@ This code was developed to better understand the emission lines from the interac
 
 
 > [!NOTE]
-> The code is under active development with an accompanying paper in preparation - future improvements will include bound-bound, bound-free, and free-free transitions, as well as viewing angles effects - Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
+> The code is under active development with an accompanying paper in preparation - future improvements will include bound-bound, bound-free, and free-free transitions, as well as viewing angles effects which will be found in the <span style="font-variant: small-caps;">SOLAS</span> code - Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
 
 ## Toy Model
 
