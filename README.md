@@ -10,7 +10,7 @@
   <h4>The Concept</h4>
 </div>
 
-**eScatter.py** is a Monte Carlo electron scattering code designed to perform simulations of electron scattering events. The foundation of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar applications developed for interacting supernovae, such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
+**escatter** is a Monte Carlo electron scattering code designed to perform simulations of electron scattering events. The foundation of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar applications developed for interacting supernovae, such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
 The development of this code aims to improve our understanding of emission lines from interacting supernovae like [SN 2021adxl][arxiv_link] and [SN 2023fyq][arxiv_link_SN2023fyq], particularly the blue excess observed in the H&alpha; 6563&Aring; and He I 5875&lambda; emission lines.
 
@@ -28,7 +28,7 @@ In brief, the code tracks a photon formed in the thin interface between supernov
 <p align="center">
   <img src="./eScatter_6563_models.png" alt="Image" width="600">
   <br>
-  <em>Figure 1: An example of *eScatter.py*'s output for the H&alpha; emission line. Here, an input profile resembling a thin emitting shell traveling at 3000 km/s is used. Photons are allowed to travel through a medium with varying optical depths. Generally, higher optical depth broadens the emergent profile and shifts the peak towards the blue. See <a href="https://arxiv.org/abs/2312.13280">here</a> for how we fit this to an observed H&alpha; profile.</em>
+  <em>Figure 1: An example of *escatter*'s output for the H&alpha; emission line. Here, an input profile resembling a thin emitting shell traveling at 3000 km/s is used. Photons are allowed to travel through a medium with varying optical depths. Generally, higher optical depth broadens the emergent profile and shifts the peak towards the blue. See <a href="https://arxiv.org/abs/2312.13280">here</a> for how we fit this to an observed H&alpha; profile.</em>
 </p>
 
 The photon continues to scatter outwards until it reaches an optically thin region. Only photons escaping in the observer's hemisphere are considered visible. A histogram of these emergent photons forms the spectral profile.
@@ -58,7 +58,7 @@ where:
   <h4>Usage</h4>
 </div>
 
-This version of *eScatter.py* can be executed by modifying parameters in the script and running the file. Below is a parameter snippet, which can be expanded into lists to generate a model grid.
+This version of *escatter* can be executed by modifying parameters in the script and running the file. Below is a parameter snippet, which can be expanded into lists to generate a model grid.
 
 ```python
 # Rest wavelength in Angstroms
@@ -90,7 +90,7 @@ vsh = [3000]
 The above parameters produced the output used in Figure 1. Once you have input your parameters, run the script using:
 
 ```bash
-python escatter.py
+python escatter
 ```
 
 Figures and output txt files will be written to `output/` and `figures/`.
