@@ -2,75 +2,79 @@
 [arxiv_link]: https://arxiv.org/abs/2312.13280
 [arxiv_link_SN2023fyq]: https://arxiv.org/abs/2401.15148
 
-# eScatter.py - Electron Scattering in Python
-
-*eScatter.py* is a Monte Carlo Electron Scattering code designed to perform Monte Carlo simulations of electron scattering events. The basis of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar codes developed for interacting supernovae such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
-
-This code was developed to better understand the emission lines from the interacting supernova, [SN 2021adxl][arxiv_link] and [SN 2023fyq][arxiv_link_SN2023fyq], specifically the blue excess seen in the H&alpha; 6563&Aring; and He I 5876&lambda; emission lines respectively.
 
 
+<div align="center">
+  <h4>The Concept</h4>
+</div>
 
-> [!NOTE]
-> The code is under active development with an accompanying paper in preparation - future improvements will include bound-bound, bound-free, and free-free transitions, as well as viewing angles effects which will be found in the <span style="font-variant: small-caps;">SOLAS</span> code - Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
+**eScatter.py** is a Monte Carlo electron scattering code designed to perform simulations of electron scattering events. The foundation of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar applications developed for interacting supernovae, such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
-## Toy Model
+The development of this code aims to improve our understanding of emission lines from interacting supernovae like [SN 2021adxl][arxiv_link] and [SN 2023fyq][arxiv_link_SN2023fyq], particularly the blue excess observed in the H&alpha; 6563&Aring; and He I 5875&lambda; emission lines.
 
-This code was built to model the interaction of fast-moving ejecta produced in a supernova explosion colliding with slow-moving material (see [Section 4 in our paper][arxiv_link]).
+> [!NOTE]  
+> The code is under active development, with an accompanying paper in preparation. Future improvements will include bound-bound, bound-free, and free-free transitions, as well as the incorporation of viewing angle effects, which will be integrated into the <span style="font-variant: small-caps;">SOLAS</span> code. Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
 
-In short, this code will follow a photon, which was formed in a thin interface between the supernova ejecta and surrounding material, as it travels radially outwards through the dense material (described by a given optical depth, &tau;). As the photon travels outwards through this material, it will scatter off an electron with a certain energy (related to its Maxwellian velocity, which is related to its temperature). The photon will then undergo probabilistic iterations and may (or may not) scatter off the electron.
+<div align="center">
+  <h4>Toy Model</h4>
+</div>
 
-<p align="center">
-  <img src="./eScatter_6563_models.png" alt="Image" width = 800>
-  <br>
-  <em>Figure 1: An example of *eScatter.py*'s output for the H&alpha; emission line. Here an input profile similar to a thin emitting shell traveling at 3000 km/s is used. Photons are allowed to travel through a medium with a varying optical depth. Generally, with higher optical depth, the emergent profile is broader, and the peak moves towards the blue. See <a href="https://arxiv.org/abs/2312.13280">here</a> to see how we fit this to an observed H&alpha; profile.</em>
-</p>
+This code models the interaction of fast-moving ejecta produced in a supernova explosion colliding with slow-moving material (see [Section 4 in our paper][arxiv_link]).
 
-The photon will continue to scatter outwards until it reaches an optically thin region, far away from where it was formed. We assume that photons emitted (or more accurately the photons which escape) on a single hemisphere are observed (i.e., photons which escape and are traveling away from the observer are not seen). A histogram of the emergent photons is then taken to be the emergent spectral profile.
+In brief, the code tracks a photon formed in the thin interface between supernova ejecta and surrounding material as it moves radially outwards through dense material (characterized by a given optical depth, &tau;). As it travels, the photon may scatter off an electron with energy related to its Maxwellian velocity (which depends on its temperature). The photon then undergoes probabilistic iterations, with the possibility of further scattering events.
 
 <p align="center">
-  <img src="./eScatter_6563_models_log.png" alt="Image" width = 800>
+  <img src="./eScatter_6563_models.png" alt="Image" width="600">
   <br>
-  <em>Figure 2: Same as Figure 1 but in logspace. Note the similarity to the work done by <a href="https://arxiv.org/abs/1312.6617">Huang & Chevalier 2017</a>.</em>
+  <em>Figure 1: An example of *eScatter.py*'s output for the H&alpha; emission line. Here, an input profile resembling a thin emitting shell traveling at 3000 km/s is used. Photons are allowed to travel through a medium with varying optical depths. Generally, higher optical depth broadens the emergent profile and shifts the peak towards the blue. See <a href="https://arxiv.org/abs/2312.13280">here</a> for how we fit this to an observed H&alpha; profile.</em>
 </p>
 
-> [!CAUTION]
-> Understand the output of the code before applying models to data. This code is not meant to be used as a black box, and the output of this code should be complemented with other information, such as the evolution of the transient and the appearance of scattering features in emission profiles.
+The photon continues to scatter outwards until it reaches an optically thin region. Only photons escaping in the observer's hemisphere are considered visible. A histogram of these emergent photons forms the spectral profile.
 
-Although scattering can produce very broad profiles when you assume high optical depths, you have to account for diffusion times, i.e., has a transient evolved for long enough for such photons to diffuse to optically thin regions. Typically, Type IIn SNe will show such features post-peak (after a few weeks post-explosion), constraining the optical depth.
+<p align="center">
+  <img src="./eScatter_6563_models_log.png" alt="Image" width="600">
+  <br>
+  <em>Figure 2: Same as Figure 1, but in logarithmic space. Note the similarity to the work by <a href="https://arxiv.org/abs/1312.6617">Huang & Chevalier 2017</a>.</em>
+</p>
 
-The diffusion time for a photon traveling through a medium with a certain optical depth, and assuming a random walk, is given by the following equation:
+> [!CAUTION]  
+> Understand the output of the code before applying models to data. This code is not meant to be used as a black box. The output should be complemented with other information, such as the transient’s evolution and the appearance of scattering features in emission profiles.
+
+Although high optical depths may produce broad profiles, diffusion times must be considered. Typically, Type IIn SNe display such features post-peak, a few weeks after the explosion, constraining the optical depth.
+
+The diffusion time for a photon traveling through a medium with optical depth &tau; is given by the equation:
 
 $$ t_d = \frac{R \tau}{c} $$
 
 where:
-- \( t_d \) is the diffusion time (i.e. how long from the moment a photon is created, to when it escapes into a optically thin region),
+- \( t_d \) is the diffusion time,
 - \( R \) is the characteristic length scale of the medium,
-- \( &tau; \) is the optical depth of the medium,
-- \( c \) is the speed of light in a vacuum.
+- \( \tau \) is the optical depth of the medium,
+- \( c \) is the speed of light.
 
+<div align="center">
+  <h4>Usage</h4>
+</div>
 
-
-## Usage
-
-This version of escatter.py is executed by changing values in the script and running the file. Below is a snippet of the parameters, many of these can be made into lists to build a grid of models.
+This version of *eScatter.py* can be executed by modifying parameters in the script and running the file. Below is a parameter snippet, which can be expanded into lists to generate a model grid.
 
 ```python
-# Rest wavelength in units of Angstrom
+# Rest wavelength in Angstroms
 lam_0 = 6563
 
-# Density parameter typoically a number between 0 [Shell like CSM] and 2 [wind like CSM]
+# Density parameter typically between 0 (Shell-like CSM) and 2 (Wind-like CSM)
 s = [2]
 
-# Number of photons to send out
+# Number of photons to simulate
 nPhotons = 1e5
 
 # Optical depth (can be a list)
 tau_range = [3, 5, 10, 15, 25]
 
-# Electron temperature from just above formation site to edge of boundary
+# Electron temperature from formation site to boundary edge
 Te_range = [(2e4, 1e4)]
 
-# Inner and outer radius of scattering region (this doesn't change the profile too much)
+# Inner and outer radius of scattering region (minimal effect on profile)
 R_range = [(1e14, 1.01e14)]
 
 # Wind velocity (untested)
@@ -78,6 +82,7 @@ vwind = [40]  # km/s
 
 # Shock velocity in km/s
 vsh = [3000]
+
 ```
 
 The above parameters produced the output used in Figure 1. Once you have input your parameters, run the script using:
@@ -88,23 +93,22 @@ python escatter.py
 
 Figures and output txt files will be written to `output/` and `figures/`.
 
-## Limitations
 
-There are many limitations and caveats to using this code:
+<div align="center">
+  <h4>Limitations</h4>
+</div>
+This is a Toy model. There are many limitations and caveats to using this code:
 
 - The code is completely spherically symmetric - such asymmetric features such as torus or jets, in reality, may yield different results.
 - Several functions are hardcoded, such as how and where the photons are injected, and how the CSM density and temperature evolve. This is a limitation of the code.
 - The code does not include absorption (i.e., the profile cannot produce P-Cygni-like profiles) - **under development**.
 
-## Requirements
 
-```
-matplotlib==3.8.0
-numpy==1.26.2
-tqdm==4.66.1
-```
-
-## Citation
+<div align="center">
+  <h4>Using this code</h4>
+</div>
+> [!CAUTION]  
+> I make no claim as to the validity of the output of this code; use it at your own discretion.
 
 Dedicated paper in progress. For the time being please cite:
 
@@ -120,7 +124,3 @@ Dedicated paper in progress. For the time being please cite:
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 ```
-
-## Warning
-
-I make no claim as to the validity of the output of this code; use it at your own discretion.
