@@ -10,16 +10,17 @@
   <h4>The Concept</h4>
 </div>
 
-**escatter** is a Monte Carlo ray tracing code designed to perform simulations of electron scattering events fo interactig transients. The foundation of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar applications developed for interacting supernovae, such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
+**escatter** is a Monte Carlo ray tracing code designed to perform simulations of electron scattering events for interacting transients. The foundation of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar applications developed for interacting supernovae, such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
 The development of this code aims to improve our understanding of emission lines from interacting supernovae like [SN 2021adxl][arxiv_link] and [SN 2023fyq][arxiv_link_SN2023fyq], particularly the blue excess observed in the H&alpha; 6563&Aring; and He I 5875&lambda; emission lines.
-
-> [!NOTE]  
-> The code is under active development, with an accompanying paper in preparation. Future improvements will include bound-bound, bound-free, and free-free transitions, as well as the incorporation of viewing angle effects, which will be integrated into the <span style="font-variant: small-caps;">SOLAS</span> code. Please direct any questions to [me](mailto:sean.brennan@astro.su.se).
 
 <div align="center">
   <h4>Toy Model</h4>
 </div>
+
+> [!CAUTION]  
+> Understand the output of the code before applying models to the data. This code is not meant to be used as a black box. There are degeneracies in this code (i.e., different inputs can produce the same outputs). The use of this code should be complemented with other information, such as the transient’s evolution and the appearance of scattering features in the emission profiles.
+
 
 This code models the interaction of fast-moving ejecta produced in a supernova explosion colliding with slow-moving material (see [Section 4 in our paper][arxiv_link]).
 
@@ -38,9 +39,6 @@ The photon continues to scatter outwards until it reaches an optically thin regi
   <br>
   <em>Figure 2: Same as Figure 1, but in logarithmic space. Note the similarity to the work by <a href="https://arxiv.org/abs/1312.6617">Huang & Chevalier 2017</a>.</em>
 </p>
-
-> [!CAUTION]  
-> Understand the output of the code before applying models to data. This code is not meant to be used as a black box. The output should be complemented with other information, such as the transient’s evolution and the appearance of scattering features in emission profiles.
 
 Although high optical depths may produce broad profiles, diffusion times must be considered. Typically, Type IIn SNe display such features post-peak, a few weeks after the explosion, constraining the optical depth.
 
