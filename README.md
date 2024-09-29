@@ -2,7 +2,9 @@
 [arxiv_link]: https://arxiv.org/abs/2312.13280
 [arxiv_link_SN2023fyq]: https://arxiv.org/abs/2401.15148
 
-
+<p align="center">
+  <img src="./logo.png" alt="escatter Logo" width="400">
+</p>
 
 <div align="center">
   <h4>The Concept</h4>
