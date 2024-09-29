@@ -10,7 +10,7 @@
   <h4>The Concept</h4>
 </div>
 
-**escatter** is a Monte Carlo electron scattering code designed to perform simulations of electron scattering events. The foundation of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar applications developed for interacting supernovae, such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
+**escatter** is a Monte Carlo ray tracing code designed to perform simulations of electron scattering events fo interactig transients. The foundation of this code originates from [Pozdnyakov et al. 1983](https://ui.adsabs.harvard.edu/abs/1983ASPRv...2..189P/abstract), with similar applications developed for interacting supernovae, such as [SN 2010jl](https://arxiv.org/abs/1312.6617) and [SN 2013L](https://arxiv.org/abs/2003.09709).
 
 The development of this code aims to improve our understanding of emission lines from interacting supernovae like [SN 2021adxl][arxiv_link] and [SN 2023fyq][arxiv_link_SN2023fyq], particularly the blue excess observed in the H&alpha; 6563&Aring; and He I 5875&lambda; emission lines.
 
